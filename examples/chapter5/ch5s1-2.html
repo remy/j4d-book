@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Chapter 5 - Recipe 2</title>
+	<style>
+	body {
+	  font-family: helvetica, arial;
+	  background: #D8CF9D;
+	  margin: 20px;
+	}
+	
+	#gradient {
+	  background: url(images/julie-with-grad.png) no-repeat center;
+    width: 288px;
+	  height: 400px;
+	  position: relative;
+	  margin: 0 auto;
+	}
+	
+	#gradient div.info {
+	  opacity: 0;
+	  color: #eee;
+	  margin: 4px;
+	  padding: 20px;	  
+	  background: #000;
+	  position: absolute;
+	  left: 0;
+	  right: 0;
+	  top: 0;
+  }
+	
+  #gradient:focus,
+  #gradient.focus { /* duplicated for IE6 support */
+    outline: 4px solid #C5BD85;
+  }
+	
+  #gradient:hover div.info,
+  #gradient:focus div.info,
+  #gradient.hover div.info, /* duplicated for IE6 support */
+  #gradient.focus div.info {
+    opacity: 0.7;
+  }
+	
+	#gradient div.info p {
+	  font-family: georgia, times;
+	  font-style: italic;
+	  text-align: center;
+	}
+	
+	</style>
+	<script src="jquery-latest.js"></script>
+	<!-- only show this code to IE6 and below -->
+	<!--[if lte IE 6]>
+	<script src="DD_belatedPNG_0.0.8a.js"></script>
+	<script>
+	 $(document).ready(function () {
+      DD_belatedPNG.fix('#gradient');
+
+      $('#gradient').hover(function () {
+        $(this).addClass('.hover');
+      }, function () {
+        $(this).removeClass('.hover');
+      }).focus(function () {
+        $(this).addClass('focus');
+      }).blur(function () {
+        $(this).removeClass('focus');
+      });
+	 });
+	</script>
+	<![endif]-->
+</head>
+<body>
+  <div class="box">
+    <div tabIndex="0" id="gradient">
+      <div class="info">
+        <p>June 19th, 2004: My wife to be.</p>
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>

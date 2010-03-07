@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>4.7 Simple Accordions</title>
+<meta charset="utf-8" />
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1;  
+}
+
+body { font: 16px Helvetica, Arial; margin: 50px; }
+
+h2 a {
+  display: block;
+  padding: 10px;
+  line-height: 24px;
+  background: #c00;
+  text-decoration: none;
+  font-size: 24px;
+  border: 2px solid #600;
+  border-top: 0;
+}
+
+h2 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+h2:first-child {
+  border-top: 2px solid #600;
+}
+
+h2 a:hover,
+h2 a.selected {
+  background: #600;
+  color: #fff;
+}
+
+div {
+  padding: 40px 10px;
+  border: 2px solid #600;
+  border-top: 0;
+}
+</style>
+<script src="jquery-latest.js"></script>
+<script>
+$(document).ready(function () {
+  var $tabs = $('h2 a');
+  var $panels = $tabs.parent().next();
+
+  $tabs.click(function () {
+    var $panel = $(this).parent().next();
+    $panels.slideUp(200);
+    $panel.slideDown(200);      
+    
+    $tabs.removeClass('selected');
+    $(this).addClass('selected');
+  }).filter(':first').click();
+});
+</script>
+</head>
+<body>
+  <h2><a href="#copyright">Copyright</a></h2>
+  <div id="copyright">
+    <p>Our copyright notice (goto <a href="#terms">terms</a>)</p>
+  </div>
+  <h2><a href="#terms">Terms and conditions</a></h2>
+  <div id="terms">
+    <p>Here be terms and conditions</p>
+  </div>
+  <h2><a href="#accessibility">Accessibility statement</a></h2>
+  <div id="accessibility">
+    <p>The accessibility statement</p>
+  </div>
+</body>
+</html>

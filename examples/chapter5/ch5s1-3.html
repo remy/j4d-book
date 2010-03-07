@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Chapter 5 - Recipe 3</title>
+<style>
+body {
+  font-family: helvetica, arial;
+  margin: 20px;
+  font-size: 200%;
+}
+
+div {
+  width: 600px;
+  padding: 10px;
+  overflow: auto;
+  background-color: #ccc;
+  margin: 20px;
+}
+
+pre {
+  margin: 0;
+}
+</style>
+<script src="jquery-latest.js"></script>
+
+<!--[if lte IE 8]>
+<script>
+$.fn.fixoverflow = function () {
+  return this.each(function () {
+    if (this.scrollWidth > this.offsetWidth) {
+      $(this).css({ 'padding-bottom' : '20px', 'overflow-y' : 'hidden' });
+    }
+  });
+}
+
+$(document).ready(function () {
+  $('pre').fixOverflow();
+});
+</script>
+<![endif]-->
+</head>
+<body>
+  <div><pre>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</pre></div>
+
+  <div class="tall"><pre>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</pre></div>
+
+</body>
+</html>

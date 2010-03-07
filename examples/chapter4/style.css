@@ -1,0 +1,82 @@
+body { 
+  font: 16px Helvetica, Arial; 
+  margin: 50px; 
+}
+
+/* style for chapter 4 section 1 */
+body#compo {
+  background: #ccc;
+  padding: 20px;
+  font: 16px/20px Helvetica, Arial, sans-serif;
+}
+
+#compo #content {
+  padding: 20px;
+  width: 600px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+legend {
+  color: #999;
+}
+
+#compo #terms {
+  display: none;
+}
+
+/* style for chapter 4 section 2 */
+#tabs * {
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+}
+
+#tabs ul.tabs {
+  border-bottom: 2px solid #600;
+  height: 46px;
+  margin-left: 40px;
+}
+
+#tabs ul.tabs li {
+  display: inline;
+}
+
+#tabs ul.tabs a {
+  float: left;
+  display: block;
+  margin-right: 10px;
+  padding: 10px;
+  line-height: 24px;
+  background: #c00;
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  border: 2px solid #600;
+  -webkit-border-radius: 10px;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-radius: 10px;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-bottomright: 0;
+  border-bottom: 0;
+}
+
+#tabs ul.tabs a:hover,
+#tabs ul.tabs a.selected {
+  background: #600;
+  color: #fff;
+}
+
+#tabs div {
+  margin-left: 40px;
+  padding: 40px 10px;
+  border: 2px solid #600;
+  border-top: 0;
+  clear: left;
+}

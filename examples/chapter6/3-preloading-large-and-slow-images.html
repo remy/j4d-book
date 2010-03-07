@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8 />
+<title>Classic image swap</title>
+<style>
+body { padding: 10px; font-family: "helvetica neue", helvetica, arial;}
+</style>
+<script src="jquery.js"></script>
+<script>
+$(document).ready(function () {
+  $('img').hover(function () {
+    $(this).data('original-src', this.src).attr('src', $(this).attr('data-hover-src'));
+  }, function () {
+    $(this).attr('src', $(this).data('original-src'));
+  });
+});
+</script>
+</head>
+<body>
+<h1>Black and white to colour</h1>
+<p>Roll your mouse over the image to see the it swap in to colour</p>
+<img src="small-julie-in-winter-bw.jpg" alt="Julie in Winter" data-hover-src="http://test.com/slow.php?file=small-julie-in-winter.jpg&amp;t=10" />
+</body>
+</html>

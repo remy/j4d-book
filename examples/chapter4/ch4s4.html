@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Section 4</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+<script src="jquery-latest.js"></script>
+<script>
+
+$(document).ready(function () {
+  var $tabs = $('ul.tabs a');
+  var panelIds = [];
+
+  $tabs.each(function () {
+    panelIds.push(this.hash);
+  });
+
+  var $panels = $(panelIds.join(','));
+  var preSelectedTab = ':first';
+  if (window.location.hash && $tabs.filter('[hash=' + window.location.hash + ']').length) {
+    preSelectedTab = '[hash=' + window.location.hash + ']';
+  }
+
+  $tabs.click(function () {
+    $tabs.removeClass('selected');
+    $(this).addClass('selected');
+    $panels.hide();
+    $panels.filter(this.hash).show();
+    
+    return false;
+  }).filter(preSelectedTab).click();
+
+  $panels.each(function () {
+    $('a[hash=#' + this.id + ']').not('ul.tabs > li > a').click(function () {
+      $tabs.filter('[hash=' + this.hash + ']').click();
+      return false;
+    });  
+  });
+});
+
+
+</script>
+</head>
+<body id="tabs">
+<ul class="tabs">
+  <li><a href="#copyright">Copyright notice</a></li>
+  <li><a href="#terms">Terms and conditions</a></li>
+  <li><a href="#accessibility">Accessibility statement</a></li>
+</ul>
+<div id="copyright">
+  <h2>Copyright</h2>
+  <p><a href="#terms">terms</a></p>
+</div>
+<div id="terms">
+  <h2>Terms and conditions</h2>
+  <p>...</p>
+</div>
+<div id="accessibility">
+  <h2>Accessibility statement</h2>
+  <p>...</p>
+</div>
+<p>For more details see our <a href="#copyright">copyright</a> notice.</p>
+</body>
+</html>

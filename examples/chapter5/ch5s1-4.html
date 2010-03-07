@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Chapter 5 - Recipe 4</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: helvetica, arial;
+}
+
+ul {
+  margin: 20px;
+  list-style: none;
+}
+
+li {
+  float: left;
+  width: 100px;
+  margin: 20px;
+  padding: 5px;
+  overflow: hidden;
+  text-align: right;
+  font-size: 70px;
+  font-weight: bold;
+  line-height: 38px;
+  height: 30px;
+  background: #999;
+  color: #fff;
+}
+
+li.nplus1 {
+  clear: left;
+  background: #c00;
+}
+
+li.nplus2 {
+  background: #0c0;
+}
+
+li.nplus3 {
+  background: #00c;
+}
+
+li.nplus4 {
+  background: #c0c;
+}
+
+</style>
+<script src="jquery-latest.js"></script>
+<script charset="utf-8">
+$(document).ready(function () {
+  $('li:nth-child(4n+1)').addClass('nplus1');
+  $('li:nth-child(4n+2)').addClass('nplus2');
+  $('li:nth-child(4n+3)').addClass('nplus3');
+  $('li:nth-child(4n+4)').addClass('nplus4');
+});
+</script>
+</head>
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+    <li>11</li>
+    <li>12</li>
+    <li>13</li>
+    <li>14</li>
+    <li>15</li>
+    <li>16</li>
+    <li>17</li>
+    <li>18</li>
+  </ul>
+  <div style="clear: both;"></div>
+</body>
+</html>

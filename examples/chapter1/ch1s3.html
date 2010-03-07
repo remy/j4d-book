@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8>
+<title>Chapter 1</title>
+<script src="jquery.js"></script>
+<script>
+$(document).ready(function () {
+  $('a.login').click(function () { 
+    $('#loginDialog').show(); 
+    return false;
+  });
+  
+  $('#close').click(function () {
+    $('#loginDialog').hide(); 
+    return false;
+  });
+});
+</script>
+</head>
+<body>
+
+<a class="login" href="/login">Login</a>
+
+<div id="loginDialog" class="dialog">
+  <div id="close"><a href="#">Close</a></div>
+  <form action="/login">
+    <fieldset>
+      <legend>Log in</legend>
+      <div>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" />
+      </div>
+      <div>
+        <label for="password">password</label>
+        <input type="password" name="password" id="password" />
+      </div>
+      <div>
+        <input type="submit" value="Log in" />
+      </div>
+    </fieldset>
+  </form>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<metacharset="utf-8">
+	<title>Chapter 5 - Recipe 1</title>
+	<style>
+	body {
+	  font-family: helvetica, arial;
+	  background: rgb(205,205,50);
+	}
+	
+	div.box {
+	  zoom: 1;
+	  float: left;
+	  margin-right: 10px;
+	}
+	
+	div.box p {
+	  text-align: center;
+	}
+	
+	#gradient {
+	  background: url(images/julie-with-grad.png) no-repeat center;
+	  width: 321px;
+	  height: 433px;
+	}
+	
+	</style>
+	<script src="jquery-latest.js"></script>
+	<script src="DD_belatedPNG_0.0.8a.js"></script>
+	
+	<script>
+	 $(document).ready(function () {
+	   DD_belatedPNG.fix('img, #gradient');
+	   
+	   // allows you to see the alpha transparency working
+	   $('input').bind('keyup change', function () {
+	     $('body').css('background', 'rgb(' + (255-this.value) + ', ' + (255-this.value) + ', ' + (this.value) + ')');
+	   }).val(255).change();
+	 });
+	</script>
+</head>
+<body>
+  <div>
+    <label for="colour">Colour value (between 0-255): </label>
+    <input id="colour" type="range" min="0" max="255" value="50" />    
+  </div>
+  <div class="box">
+    <img height="433" width="321" src="images/julie-with-shadow.png" />
+    <p>PNG &lt;img&gt; element with shadow</p>
+  </div>
+  <div class="box">
+    <div id="gradient"></div>
+    <p>&lt;div&gt; with background PNG with transparent gradient</p>
+  </div>
+</body>
+</html>

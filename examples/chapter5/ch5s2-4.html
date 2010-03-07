@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8>
+<title>Chapter 5 - Recipe 5.2.4 - Validation</title>
+<style>
+body { font-family: helvetica, arial; }
+fieldset { padding: 10px; border: 2px solid #ccc; width: 600px; margin: 0 auto; }
+legend { color: #ccc; }
+fieldset div { clear: left; padding: 10px 0; }
+label { float: left; display: block; width: 300px; }
+label.error { font-size: 90%; color: #c00; margin-left: 50%; }
+em { margin-left: 10px; }
+</style>
+<script src="jquery-latest.js"></script>
+<script src="jquery.validate.js"></script>
+<script>
+$.validator.addMethod('who', function(value) {
+  value = value.toLowerCase();
+	return value == 'remy' || value == 'julie';
+}, 'Please enter "Remy" or "Julie"');
+
+$(document).ready(function () {
+  $('form').validate({
+		submitHandler: function (form) {
+		  $('input[type=submit]', form).after('<em>processing...</em>').attr('disabled', 'disabled');
+		  return false;
+		},
+		rules: {
+		  username: {
+				remote: "username.php"
+			}
+		},
+		messages: {
+		  username: {
+				required: "Select a username",
+				remote: jQuery.format("{0} is already in use")
+			}
+		}
+  });
+});
+</script>
+</head>
+<body>
+  <form method="post" action="">
+  	<fieldset>
+  		<legend>Register for our service</legend>
+  		<div>
+  			<label for="fullname">Name (required, at least 2 characters)</label>
+  			<input id="fullname" name="fullname" class="required" minlength="2" />
+  		</div>
+  		<div>
+  			<label for="email">Email (required)</label>
+  			<input id="email" name="email" class="required email" />
+  		</div>
+  		<div>
+  			<label for="username">Username</label>
+  			<input id="username" name="username" class="required" minlength="2" />
+  		</div>
+  		<div>
+  			<label for="who">Remy or Julie?</label>
+  			<input id="who" name="who" class="required who" />
+  		</div>
+			<input class="submit" type="submit" value="Submit"/>
+  	</fieldset>
+  </form>
+</body>
+</html>

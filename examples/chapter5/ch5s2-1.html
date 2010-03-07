@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Chapter 5 - Recipe 5</title>
+<style>
+body {
+  font-family: helvetica, arial;
+}
+</style>
+<script src="jquery-latest.js"></script>
+<script>
+$.expr[":"].notin = function (el, i, match) { 
+  return !(jQuery(el).parents(match[3]).length);
+};
+
+$(document).ready(function () {
+  $('a:notin(ul)').each(function () {
+    $('#debug').append('found: ' + this.hash + '<br />');
+  });
+});
+</script>
+</head>
+<body>
+  <ul>
+    <li><a href="#one">1</a></li>
+    <li><a href="#two">2</a></li>
+    <li><a href="#three">3</a></li>
+  </ul>
+  <a href="#outside">Link outside</a>
+  <div id="debug"></div>
+</body>
+</html>

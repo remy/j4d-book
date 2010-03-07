@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jQuery UI tabs</title>
+<meta charset="utf-8" />
+<link type="text/css" href="ch4s6-assets/css/ui-lightness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />	
+<script src="jquery-latest.js"></script>
+<script src="ch4s6-assets/js/jquery-ui-1.7.2.custom.min.js"></script>
+<script>
+
+$(document).ready(function () {
+  $('#tabs').tabs({ fx: { opacity: 'toggle', height: 'toggle' } });
+});
+
+</script>
+</head>
+<body>
+<div id="tabs">
+  <ul class="tabs">
+    <li><a href="ch4s6-assets/tabs/copyright.html">Copyright notice</a></li>
+    <li><a href="#terms">Terms and conditions</a></li>
+    <li><a href="#accessibility">Accessibility statement</a></li>
+  </ul>
+  <div id="terms">
+    <h2>Terms and conditions</h2>
+    <p>...</p>
+  </div>
+  <div id="accessibility">
+    <h2>Accessibility statement</h2>
+    <p>...</p>
+  </div>
+</div>
+</body>
+</html>

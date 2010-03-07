@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>4.8 jQuery UI Accordions</title>
+<meta charset="utf-8" />
+<link type="text/css" href="ch4s9-assets/css/ui-lightness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />	
+<style>
+body { font: 62.5% "Trebuchet MS", sans-serif; }
+#accordion { height: 220px; }
+</style>
+<script src="jquery-latest.js"></script>
+<script src="ch4s9-assets/js/jquery-ui-1.7.2.custom.min.js"></script>
+<script>
+$(document).ready(function () {
+  $('#accordion').accordion({ fillSpace : true, navigation: true });
+});
+</script>
+</head>
+<body>
+<div id="accordion">
+  <h2><a href="#copyright">Copyright</a></h2>
+  <div id="copyright">
+    <p>Our copyright notice</p>
+  </div>
+  <h2><a href="#terms">Terms and conditions</a></h2>
+  <div id="terms">
+    <p>Here be terms and conditions - notice the height content doesn't fill the height, but the panel is expanded out</p>
+  </div>
+  <h2><a href="#accessibility">Accessibility statement</a></h2>
+  <div id="accessibility">
+    <p>The accessibility statement</p>
+  </div>
+</div>
+</body>
+</html>
